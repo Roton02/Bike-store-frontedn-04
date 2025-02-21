@@ -1,3 +1,9 @@
+import BikeBanner from '@/component/Banner'
+
 export default function Home() {
-  return <div>Home</div>
+  return (
+    <div>
+      <BikeBanner />
+    </div>
+  )
 }

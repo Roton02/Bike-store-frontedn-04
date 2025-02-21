@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Button } from './components/ui/button'
+import Home from './pages/Home'
 import { useGetBikesQuery } from './Redux/api/baseApi'
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
   console.log(data)
   return (
     <div className='text-center py-20 '>
-      <Button>Click me</Button>
+      <Home />
     </div>
   )
 }

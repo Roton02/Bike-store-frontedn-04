@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 function Layout() {
   return (
-    <div className='max-w-6xl mx-auto'>
+    <div className='max-w-7xl mx-auto'>
       <div className='h-20 mt-5'>
         <Navbar />
       </div>
