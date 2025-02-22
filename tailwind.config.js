@@ -4,6 +4,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'], // Inter Font
+        poppins: ['Poppins', 'sans-serif'], // Another Example
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -20,8 +24,8 @@ module.exports = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        primary: '36827F',
-        secondary: '071108',
+        primary: '#36827F',
+        secondary: '#071108',
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
