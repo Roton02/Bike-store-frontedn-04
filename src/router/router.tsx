@@ -4,6 +4,8 @@ import AboutPage from '@/pages/about'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import { createBrowserRouter } from 'react-router-dom'
+import ProtectedRoute from './protectedRoute'
+import AdminRoute from './adminRoutes'
 
 const router = createBrowserRouter([
   {
@@ -12,12 +14,16 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <App /> },
       {
-        path: 'bikes',
-        element: <h2>Products</h2>,
+        path: 'products',
+        element: <ProtectedRoute>Product</ProtectedRoute>,
       },
       {
         path: 'about',
-        element: <AboutPage />,
+        element: (
+          <AdminRoute>
+            <AboutPage />
+          </AdminRoute>
+        ),
       },
       {
         path: 'contact',
