@@ -17,8 +17,8 @@ function BestSeller() {
       </div>
 
       <div className='flex gap-10 mt-10'>
-        {data.map((dt) => (
-          <BikeCard />
+        {data.map((dt, id) => (
+          <BikeCard key={id} />
         ))}
       </div>
     </div>

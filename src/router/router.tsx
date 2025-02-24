@@ -6,6 +6,7 @@ import Register from '@/pages/Register'
 import { createBrowserRouter } from 'react-router-dom'
 import ProtectedRoute from './protectedRoute'
 import AdminRoute from './adminRoutes'
+import { Bikes } from '@/pages/Bikes'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
       { index: true, element: <App /> },
       {
         path: 'products',
-        element: <ProtectedRoute>Product</ProtectedRoute>,
+        element: (
+          <ProtectedRoute>
+            <Bikes />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'about',
