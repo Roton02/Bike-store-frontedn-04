@@ -4,9 +4,10 @@ import AboutPage from '@/pages/about'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import { createBrowserRouter } from 'react-router-dom'
-import ProtectedRoute from './protectedRoute'
-import AdminRoute from './adminRoutes'
-import { Bikes } from '@/pages/Bikes'
+// import ProtectedRoute from './protectedRoute'
+// import AdminRoute from './adminRoutes'
+import Bikes from '@/pages/Bikes'
+import BikeDetails from '@/pages/BikeDetails'
 
 const router = createBrowserRouter([
   {
@@ -15,24 +16,28 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <App /> },
       {
-        path: 'products',
-        element: (
-          <ProtectedRoute>
-            <Bikes />
-          </ProtectedRoute>
-        ),
+        path: '/products',
+        element: <Bikes></Bikes>,
       },
       {
-        path: 'about',
-        element: (
-          <AdminRoute>
-            <AboutPage />
-          </AdminRoute>
-        ),
+        path: '/product/:id',
+        element: <BikeDetails></BikeDetails>,
       },
       {
-        path: 'contact',
+        path: '/about',
+        element: <AboutPage />,
+      },
+      {
+        path: '/contact',
         element: <h2>Contact</h2>,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
       },
     ],
   },

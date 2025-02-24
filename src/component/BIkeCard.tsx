@@ -1,18 +1,18 @@
-type BikeDatatype = {
-  bike: BikeData
+type IBiketype = {
+  bike: IBike
 }
 
-import { BikeData } from '@/types/bikeData'
-import bikePhoto from '../assets/bike@2x.png'
+import bikePhoto from '../assets/banner1.png'
 import { useNavigate } from 'react-router-dom'
 import PrimaryBtn from './PrimaryBtn'
+import IBike from '@/types/bike.interface'
 
-const BikeCard = ({ bike }: BikeDatatype) => {
+const BikeCard = ({ bike }: IBiketype) => {
   const navigate = useNavigate()
 
   return (
     <div
-      onClick={() => navigate(`/product/${bike?.id}`)}
+      onClick={() => navigate(`/product/${bike?._id}`)}
       className=' hover:border-primary border-2'
     >
       <div className=' bg-gray-200 p-4 relative'>
@@ -23,7 +23,7 @@ const BikeCard = ({ bike }: BikeDatatype) => {
           <img className='h-full  ' src={bikePhoto} alt='bike photo' />
         </div>
 
-        <div className=' absolute top-4 left-4 flex  flex-col gap-3 bg-white border  rounded-b-full justify-start items-center p-1 '>
+        {/* <div className=' absolute top-4 left-4 flex  flex-col gap-3 bg-white border  rounded-b-full justify-start items-center p-1 '>
           {bike.colorOptions?.map((item: string, index: number) => {
             return (
               <div
@@ -33,21 +33,21 @@ const BikeCard = ({ bike }: BikeDatatype) => {
               ></div>
             )
           })}
-        </div>
+        </div> */}
 
-        <div className=' absolute bottom-4 right-4 flex-col flex gap-2'>
+        {/* <div className=' absolute bottom-4 right-4 flex-col flex gap-2'>
           {/* Display 2 images from the array and change the main image on click */}
-          {bike?.images?.slice(0, 2).map((item: string, index: number) => {
-            return (
-              <img
-                key={index}
-                className='w-10 h-10 rounded-md border-2 border-white'
-                src={item}
-                alt='bike photo'
-              />
-            )
-          })}
-        </div>
+        {/* {bike?.image?.slice(0, 2).map((item: string, index: number) => {
+          return (
+            <img
+              key={index}
+              className='w-10 h-10 rounded-md border-2 border-white'
+              src={item}
+              alt='bike photo'
+            />
+          )
+        })} */}
+        {/* </div> */}
       </div>
       <div className=' p-5 py-8 text-start'>
         <h1 className='  font-semibold text-xl text-black text-start '>

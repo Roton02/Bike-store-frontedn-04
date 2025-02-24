@@ -1,9 +1,9 @@
-import { BikeData } from '@/types/bikeData'
+import IBike from '@/types/bike.interface'
 import img from '../assets/bike.png'
 
 import { MoveRight, ShoppingCart } from 'lucide-react'
 interface PropsType {
-  bike: BikeData
+  bike: IBike
 }
 
 const BikeDetailsBanner = ({ bike }: PropsType) => {
@@ -16,7 +16,7 @@ const BikeDetailsBanner = ({ bike }: PropsType) => {
           {bike?.name}{' '}
         </h1>
         <h5 className='text-gray-900 uppercase text-lg font-bold'>
-          {bike?.waterproof}-{bike?.waterproof}
+          {/* {bike?.waterproof}-{bike?.waterproof} */} - todo
         </h5>
 
         <p className='text-xl  font-bold text-primary'>{bike?.price} TK</p>
@@ -35,19 +35,19 @@ const BikeDetailsBanner = ({ bike }: PropsType) => {
             <div className=' bg-black bg-opacity-50 lg:w-8/12 md:w-10/12 w-full mx-auto min-h-9 p-8  grid lg:grid-cols-4  grid-cols-2 justify-center  gap-4 '>
               <div className='border-r-2 border-white text-white text-center  p-2'>
                 <h1>Max Speed</h1>
-                <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p>
+                {/* <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p> */}
               </div>
               <div className='border-r-2 border-white text-white text-center  p-3'>
                 <h1>Max Speed</h1>
-                <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p>
+                {/* <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p> */}
               </div>
               <div className='border-r-2 border-white text-white text-center  p-3'>
                 <h1>Max Speed</h1>
-                <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p>
+                {/* <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p> */}
               </div>
               <div className=' text-white text-center  p-3'>
                 <h1>Max Speed</h1>
-                <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p>
+                {/* <p className=' text-xl font-semibold'>{bike?.maxSpeed}</p> */}
               </div>
             </div>
           </div>

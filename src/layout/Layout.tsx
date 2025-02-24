@@ -9,7 +9,7 @@ function Layout() {
         <Navbar />
       </div>
 
-      <div className='flex flex-col w-full h-screen  mx-auto'>
+      <div className='flex flex-col w-full h-screen   mx-auto'>
         <div className={`flex-1 }`}>
           <Outlet />
         </div>

@@ -1,7 +1,7 @@
 import BikeBanner from '@/component/Banner'
 import BestSeller from '@/component/BestSeller'
 import Consultation from '@/component/Consultation'
-import HotNews from '@/component/HotNews'
+// import HotNews from '@/component/HotNews'
 import NewProduct from '@/component/NewProduct'
 import Specifications from '@/component/Specifications'
 import WhyChooseUs from '@/component/WhyChooseUs'
@@ -12,9 +12,11 @@ export default function Home() {
       <BikeBanner />
       <BestSeller></BestSeller>
       <NewProduct></NewProduct>
-      <Specifications></Specifications>
+      <div className='bg-gray-100'>
+        <Specifications></Specifications>
+      </div>
       <WhyChooseUs></WhyChooseUs>
-      <HotNews></HotNews>
+      {/* <HotNews></HotNews> */}
       <Consultation></Consultation>
     </div>
   )

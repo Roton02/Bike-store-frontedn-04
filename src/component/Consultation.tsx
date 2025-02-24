@@ -23,10 +23,10 @@ const Consultation = () => {
 
   return (
     <div
-      className='bg-cover bg-center w-full p-6 py-12'
+      className='bg-cover bg-center w-full p-6 py-12 '
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className='max-w'>
+      <div className='max-w-7xl mx-auto'>
         <div className='bg-white bg-opacity-70 shadow-lg p-6 lg:w-6/12 md:w-8/12 w-full mx-auto text-center h-5/6'>
           <img src={logo} alt='Bike-Bike Logo' className='mx-auto w-20 mb-3' />
           <PageHeading title='SIGN UP FOR CONSULTATION' />

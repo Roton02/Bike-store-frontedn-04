@@ -5,7 +5,7 @@ import PageHeading from './PageHeading'
 
 const Specifications = () => {
   return (
-    <div className='max-w bg-gray-100 p-4 py-5 '>
+    <div className='max-w-7xl mx-auto   p-4 py-5 '>
       <h2 className=' uppercase text-gray-500 font-semibold text-2xl'>
         Technology
       </h2>

@@ -3,7 +3,7 @@ import IBike from '@/types/bike.interface'
 
 const bikesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getAllBikes: builder.query<IBike[], string | void>({
+    getAllBikes: builder.query({
       query: (searchTerm?: string) => ({
         url: searchTerm
           ? `/bike?searchTerm=${encodeURIComponent(searchTerm)}`
@@ -13,7 +13,7 @@ const bikesApi = baseApi.injectEndpoints({
       // providesTags: [{ type: 'bikes' as const, id: 'LIST' }],
     }),
 
-    getBike: builder.query<IBike, string>({
+    getBike: builder.query({
       query: (id: string) => ({
         url: `/bike/${id}`,
         method: 'GET',

@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import img from '../assets/bike.png'
-import { BikeData } from '@/types/bikeData'
 import PrimaryBtn from './PrimaryBtn'
 
-interface PropsType {
-  bike: BikeData
-}
 
-const DetailsContent = ({ bike }: PropsType) => {
+const DetailsContent = ({ data }) => {
+  console.log('bikes from details bike', data)
+  const [bike, setBike] = useState(data.data)
   const [openSection, setOpenSection] = useState<string | null>('dimensions')
 
   const toggleSection = (section: string) => {
@@ -25,7 +24,7 @@ const DetailsContent = ({ bike }: PropsType) => {
           </h2>
           <h1 className='text-5xl font-extrabold mt-2'>{bike?.name}</h1>
           <p className='text-green-600 text-2xl font-bold mt-4 mb-5'>
-            {bike?.price.toLocaleString()} VND
+            {bike?.price} VND
           </p>
           <PrimaryBtn title='Buy Now '></PrimaryBtn>
           <p className='text-sm text-gray-600 mt-2'>
@@ -41,13 +40,14 @@ const DetailsContent = ({ bike }: PropsType) => {
 
       {/* Color Options */}
       <div className='flex justify-center gap-3 mt-4'>
-        {bike?.colorOptions.map((color, index) => (
+        {/* {bike?.colorOptions.map((color, index) => (
           <div
             key={index}
             className='w-6 h-6 rounded-full border border-gray-300 '
             title={color}
           />
-        ))}
+        ))} */}{' '}
+        _ TODO
       </div>
 
       {/* Collapsible Sections */}
@@ -63,13 +63,14 @@ const DetailsContent = ({ bike }: PropsType) => {
           </button>
           {openSection === 'dimensions' && (
             <div className='p-4 bg-gray-100'>
-              <p>Dimensions: {bike?.dimensions}</p>
+              {/* <p>Dimensions: {bike?.dimensions}</p>
               <p>Screen: {bike?.screen}</p>
               <p>Ground Clearance: {bike?.groundClearance}</p>
               <p>Seat Height: {bike?.seatHeight}</p>
               <p>Vehicle Weight: {bike?.vehicleWeight}</p>
               <p>Permissible Weight: {bike?.permissibleWeight}</p>
-              <p>Color Options: {bike?.colorOptions.join(', ')}</p>
+              <p>Color Options: {bike?.colorOptions.join(', ')}</p> */}{' '}
+              _ TODO
             </div>
           )}
         </div>
@@ -85,8 +86,9 @@ const DetailsContent = ({ bike }: PropsType) => {
           </button>
           {openSection === 'engine' && (
             <div className='p-4 bg-gray-100'>
-              <p>Rated Power: {bike?.ratedPower}</p>
-              <p>Max Speed: {bike?.maxSpeed}</p>
+              {/* <p>Rated Power: {bike?.ratedPower}</p>
+              <p>Max Speed: {bike?.maxSpeed}</p> */}{' '}
+              - TODO
             </div>
           )}
         </div>
@@ -102,8 +104,9 @@ const DetailsContent = ({ bike }: PropsType) => {
           </button>
           {openSection === 'battery' && (
             <div className='p-4 bg-gray-100'>
-              <p>Travel Distance: {bike?.travelDistance}</p>
-              <p>Charging Time: {bike?.chargingTime}</p>
+              {/* <p>Travel Distance: {bike?.travelDistance}</p>
+              <p>Charging Time: {bike?.chargingTime}</p> */}{' '}
+              -TODO
             </div>
           )}
         </div>
@@ -119,8 +122,9 @@ const DetailsContent = ({ bike }: PropsType) => {
           </button>
           {openSection === 'other' && (
             <div className='p-4 bg-gray-100'>
-              <p>Trunk Width: {bike?.trunkWidth}</p>
-              <p>Waterproof: {bike?.waterproof}</p>
+              {/* <p>Trunk Width: {bike?.trunkWidth}</p>
+              <p>Waterproof: {bike?.waterproof}</p> */}
+              -TODO{' '}
             </div>
           )}
         </div>

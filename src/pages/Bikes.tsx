@@ -1,11 +1,12 @@
 import BikeCard from '@/component/BIkeCard'
 import Consultation from '@/component/Consultation'
 import PageHeading from '@/component/PageHeading'
-import { BikeData } from '@/types/bikeData'
-import { useQuery } from '@tanstack/react-query'
+// import { useQuery } from '@tanstack/react-query'
 import { MoveLeft, MoveRight } from 'lucide-react'
 import { useState, useMemo } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+import IBike from '@/types/bike.interface'
+import { useGetAllBikesQuery } from '@/Redux/featured/bikes/bikesApi'
 
 const Bikes = () => {
   // State for pagination
@@ -13,24 +14,25 @@ const Bikes = () => {
   const bikesPerPage = 8
 
   // Fetch bike data
-  const {
-    data: bikes,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['all-bike'],
-    queryFn: async () => {
-      const res = await axios.get('/bike.json')
-      return res.data
-    },
-  })
+  // const {
+  //   data: bikes,
+  //   isLoading,
+  //   error,
+  // } = useQuery({
+  //   queryKey: ['all-bike'],
+  //   queryFn: async () => {
+  //     const res = await axios.get('/bike.json')
+  //     return res.data
+  //   },
+  // })
+  const { data: bikes, error, isLoading } = useGetAllBikesQuery(undefined)
 
   // Pagination logic using useMemo
   const paginatedBikes = useMemo(() => {
     const startIndex = (currentPage - 1) * bikesPerPage
-    return bikes?.slice(startIndex, startIndex + bikesPerPage)
+    return bikes?.data?.slice(startIndex, startIndex + bikesPerPage)
   }, [bikes, currentPage])
-
+  //Array.isArray(data) ? data.slice(0, 6) : []
   const totalPages = Math.ceil((bikes?.length || 0) / bikesPerPage)
 
   if (isLoading) return <p className='text-center'>Loading...</p>
@@ -42,7 +44,7 @@ const Bikes = () => {
       <PageHeading title='All Products' />
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 '>
-        {paginatedBikes?.map((bike: BikeData) => (
+        {paginatedBikes?.map((bike: IBike) => (
           <div key={bike.id} className='border p-2 rounded-lg shadow-lg'>
             <BikeCard bike={bike} />
           </div>

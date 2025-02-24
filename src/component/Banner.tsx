@@ -84,7 +84,7 @@ const BikeBikeBanner: React.FC = () => {
   }
 
   return (
-    <div className='relative w-full bg-white'>
+    <div className='relative w-full bg-white max-w-7xl mx-auto'>
       {/* Bike Image and Slider */}
       <div className='relative flex flex-col md:flex-row-reverse items-center justify-center overflow-hidden'>
         <div className='w-full md:w-1/2 flex justify-center p-4'>

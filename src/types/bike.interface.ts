@@ -1,13 +1,14 @@
 interface IBike {
-  _id?: string;
-  name: string;
-  image: string;
-  brand: string;
-  price: number;
-  category: 'Mountain' | 'Road' | 'Hybrid' | 'Electric';
-  description: string;
-  quantity: number;
-  inStock: boolean;
+  id: number
+  _id?: string
+  name: string
+  image: string
+  brand: string
+  price: number
+  category: 'Mountain' | 'Road' | 'Hybrid' | 'Electric'
+  description: string
+  quantity: number
+  inStock: boolean
 }
 
-export default IBike;
+export default IBike
